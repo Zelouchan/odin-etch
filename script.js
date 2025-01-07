@@ -12,17 +12,15 @@ function gridNum() {
 
     document.getElementById("container").innerHTML = "";
     
-    createGrid(amount);
-    giveSize(amount);
+    let size = (100 / amount) +"%";
+
+    createGrid(amount, size);
 }
 
-function giveSize(amount) {
-    let size = (100 / amount) +"%";
-    createGrid(size)
-}
 
 function createGrid(amount, size) {
     let total = (amount * amount);
+    
     for (let i = 0; i < total; i++) {
     let div = document.createElement("div");
     div.classList.add("grid");
@@ -32,8 +30,12 @@ function createGrid(amount, size) {
     document.getElementById("container").appendChild(div);
     }
 
-    document.getElementsByClassName("grid").addEventListener("mouseover", changeBackground);
-        function changeBackground() {
-            this.style.backgroundColor = "black";
-        }
-}
+    let gridElement = document.querySelectorAll(".grid");
+    
+    gridElement.forEach((elem) =>  {
+        elem.addEventListener("mouseover", function () {
+                this.style.backgroundColor = "black";
+        });
+     });
+       
+    }
