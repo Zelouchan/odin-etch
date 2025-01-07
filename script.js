@@ -4,8 +4,11 @@ document.getElementById("random").addEventListener("click", colourBackground);
 document.getElementById("clear").addEventListener("click", clearBg);
 
 function clearBg() {
-  document.getElementsByClassName("grid")
-  this.style.backgroundColor; "white";
+  let gridElements = document.querySelectorAll(".grid");
+  gridElements.forEach((elem) => {
+  
+  elem.style.backgroundColor = "white";
+});
 }
 
 function gridNum() {
