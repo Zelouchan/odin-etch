@@ -1,7 +1,12 @@
 document.getElementById("reset").addEventListener("click", gridNum);
 document.getElementById("colour").addEventListener("click", colourBackgroundBlack);
 document.getElementById("random").addEventListener("click", colourBackground);
-// document.getElementById("clear").addEventListener("click", );
+document.getElementById("clear").addEventListener("click", clearBg);
+
+function clearBg() {
+  document.getElementsByClassName("grid")
+  this.style.backgroundColor; "white";
+}
 
 function gridNum() {
   let amount = prompt(
@@ -31,7 +36,6 @@ function createGrid(amount, size) {
     colourBackgroundBlack();
 
     document.getElementById("container").appendChild(div);
-  
   }
 }
 
@@ -54,16 +58,6 @@ function colourBackgroundBlack() {
     });
   });
 }
-
-// colourBackground();
-
-// let gridElement = document.querySelectorAll(".grid");
-
-// gridElement.forEach((elem) =>  {
-//     elem.addEventListener("mouseover", function () {
-//             this.style.backgroundColor = colourPicker();
-//     });
-//  });
 
 function colourPicker() {
   let col1 = Math.floor(Math.random() * 256);
