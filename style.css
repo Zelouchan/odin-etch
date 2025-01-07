@@ -1,3 +1,11 @@
+:root {
+    --fontcolor: white;
+    --bgcolor: rgb(31, 91, 57);
+    --buttonhover: seagreen;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+  
 body {
     display: flex;
     flex-direction: row;
@@ -5,7 +13,12 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: royalblue;
+    background-color: var(--bgcolor);
+}
+
+h1 {
+    font-size: 3em;
+    font-family: 'Gochi hand', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .top {
@@ -13,22 +26,27 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 30vh;
-}
-
-.buttons {
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    width: 20vh;
+    width: 40vh;
+    color: var(--fontcolor);
 }
 
 button {
     align-content: center;
-    width: 10em;
+    align-self: center;
+    width: 12em;
     height: 3em;
     font-size: 1em;
     margin: 5%;
+    border-radius: 15em;
+    border: 2px solid var(--fontcolor);
+    background-color: var(--bgcolor);
+    color: var(--fontcolor);
+}
+
+button:hover {
+    background-color: var(--buttonhover);
+    cursor: pointer;
+    font-weight: bold;
 }
 
 #container {
@@ -36,6 +54,6 @@ button {
     flex-wrap: wrap;
     width: 90vh;
     height: 90vh;
-    border: 5px solid black;
-    background-color: aliceblue;
+    border: 1px solid black;
+    background-color: white;
 }
