@@ -54,6 +54,7 @@ button:hover {
     flex-wrap: wrap;
     width: 90vh;
     height: 90vh;
-    border: 1px solid black;
+    border: 3px solid black;
     background-color: white;
+    box-shadow: 5px 5px 5px black;
 }
