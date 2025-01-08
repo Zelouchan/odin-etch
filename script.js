@@ -4,6 +4,29 @@ document.getElementById("colour").addEventListener("click", on);
 document.getElementById("random").addEventListener("click", colourBackground);
 document.getElementById("clear").addEventListener("click", clearBg);
 
+// button that feeds back color id
+document.querySelectorAll(".btnColour").forEach(button => {
+
+  button.addEventListener("click", function (event) {
+  let colourId = event.target.id;
+  colourPick(colourId);
+  off();
+});
+});
+
+console.log(colourPick);
+
+function colourPick(colourId) {
+    let gridElement = document.querySelectorAll(".grid");
+  
+    gridElement.forEach((elem) => {
+      elem.addEventListener("mouseover", function () {
+        this.style.backgroundColor = colourId;
+      });
+    });
+}
+
+
 // calls overlay
 function on() {
   document.getElementById("overlay").style.display = "block";
@@ -61,11 +84,7 @@ function colourBackground() {
 
   gridElement.forEach((elem) => {
     elem.addEventListener("mouseover", function () {
-      // if (document.getElementById("rainbow").addEventListener("click")) =>
       this.style.backgroundColor = colourPicker();
-      // } else if { document.getElementById("rainbow").addEventListener("click")) =>
-        // this.style.backgroundColor = " /variable colour corresponding to button id/";
-//    }{ else {I don't know do something};
     });
   });
 }
