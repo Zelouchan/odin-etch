@@ -1,8 +1,17 @@
 // buttons: reset grid, pick colour, rainbow, clear to white
 document.getElementById("reset").addEventListener("click", gridNum);
-document.getElementById("colour").addEventListener("click", colourBackgroundBlack);
+document.getElementById("colour").addEventListener("click", on);
 document.getElementById("random").addEventListener("click", colourBackground);
 document.getElementById("clear").addEventListener("click", clearBg);
+
+// calls overlay
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
 
 // sets the background colours to white
 function clearBg() {
@@ -42,9 +51,9 @@ function createGrid(amount, size) {
     div.style.height = size;
 
     document.getElementById("container").appendChild(div);
-    // colourBackgroundBlack();
-  }
-}
+      }
+    colourBackgroundBlack();
+    }
 
 // creates selects colour for drawing
 function colourBackground() {
@@ -80,16 +89,6 @@ function colourPicker() {
   return `rgb(${col1}, ${col2}, ${col3})`;
 }
 
-// creates an emptry grid as soon as the page loads
-window.addEventListener("load", (event) => {
-  for (let i = 0; i < 256; i++) {
-    let div = document.createElement("div");
-    div.classList.add("grid");
-    div.style.width = "6.25%";
-    div.style.height = "6.25%";
-
-    colourBackgroundBlack();
-
-    document.getElementById("container").appendChild(div);
-  }
-});
+window.onload=function(){
+  createGrid(16, "6.25%");
+}
