@@ -42,17 +42,21 @@ function createGrid(amount, size) {
     div.style.height = size;
 
     document.getElementById("container").appendChild(div);
-    colourBackgroundBlack();
+    // colourBackgroundBlack();
   }
 }
 
-// creates rainbow coloured background
+// creates selects colour for drawing
 function colourBackground() {
   let gridElement = document.querySelectorAll(".grid");
 
   gridElement.forEach((elem) => {
     elem.addEventListener("mouseover", function () {
+      // if (document.getElementById("rainbow").addEventListener("click")) =>
       this.style.backgroundColor = colourPicker();
+      // } else if { document.getElementById("rainbow").addEventListener("click")) =>
+        // this.style.backgroundColor = " /variable colour corresponding to button id/";
+//    }{ else {I don't know do something};
     });
   });
 }
@@ -81,8 +85,8 @@ window.addEventListener("load", (event) => {
   for (let i = 0; i < 256; i++) {
     let div = document.createElement("div");
     div.classList.add("grid");
-    div.style.width = 100/16 + "%";
-    div.style.height = 100/16 + "%";
+    div.style.width = "6.25%";
+    div.style.height = "6.25%";
 
     colourBackgroundBlack();
 
